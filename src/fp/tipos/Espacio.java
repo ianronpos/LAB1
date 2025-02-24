@@ -1,14 +1,17 @@
-package fp.universidades.tipos;
+package fp.tipos;
 
-//No hay que importar Aula por que esta en el mismo paquete
+import fp.universidades.utiles.Checkers;
 
-public class Espacio {
+public class Espacio implements Comparable<Espacio>{
 	private String nombre; 
 	private Integer capacidad; 
 	private Aula aula; 
 	private final Integer planta; 
 	
-	public Espacio(String nombre, Integer capacidad, Aula aula, Integer planta) {
+	public Espacio(String nombre, Integer capacidad, Aula aula) {
+		//Comprobando si la capacidad cumple la restriccion
+		validarCapacidad(capacidad);
+		
 		this.nombre = nombre; 
 		this.capacidad = capacidad; 
 		this.aula = aula;
@@ -32,7 +35,7 @@ public class Espacio {
 	public void setNombre(String nombre) {
 		Integer plantaNueva = extraerPlanta(nombre); 
 		
-		//Comprueba si se esta intentando cambiar la plant, en caso afirmativo lanza un error
+		//Comprueba si se esta intentando cambiar la planta, en caso afirmativo lanza un error
 		if(plantaNueva != planta){ 
             throw new IllegalArgumentException("No se puede cambiar la planta con un nuevo nombre, ya que se esta intentando cambiar la planta"); 
 		}
@@ -45,6 +48,9 @@ public class Espacio {
 	}
 	
 	public void setCapacidad(Integer capacidad) {
+		//Comprobando si la capacidad cumple la restriccion
+		validarCapacidad(capacidad);
+		
 		this.capacidad = capacidad; 
 	}
 	
@@ -63,5 +69,33 @@ public class Espacio {
 	@Override
 	public String toString() { 
 		return nombre + "(planta " + planta + ")"; 
+	}
+	
+	@Override 
+	public boolean equals(Object obj) { 
+		if(this == obj)  
+			return true;
+		if(obj == null)
+			return false; 
+		if(getClass() != obj.getClass())
+			return false; 
+		Espacio other = (Espacio) obj; 
+		return this.nombre.equals(other.nombre) && this.planta.equals(other.planta); 
+	}
+	
+	@Override
+	public int compareTo(Espacio o) { 
+		int codigoPlanta = this.planta.compareTo(o.planta);
+		if(codigoPlanta != 0) 
+			return codigoPlanta;
+
+		return this.nombre.compareTo(o.nombre); 
+	}
+	
+	
+	private void validarCapacidad(int capacidad) {
+		//Comprueba si la capacidad es mayor que 0
+		Checkers.check("La capacidad ha de ser mayor que 0", capacidad > 0);
+		
 	}
 }
