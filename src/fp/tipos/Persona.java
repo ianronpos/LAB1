@@ -2,7 +2,7 @@ package fp.tipos;
 
 import java.time.LocalDate;
 
-import fp.universidades.utiles.Checkers; 
+import fp.utiles.Checkers; 
 
 public class Persona implements Comparable<Persona>{
 	//Atributos

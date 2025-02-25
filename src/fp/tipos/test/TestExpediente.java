@@ -9,6 +9,29 @@ import fp.tipos.Convocatoria;
 
 public class TestExpediente {
 
+	public static void testEquals() { 
+		Expediente e1 = new Expediente(); 
+		Expediente e2 = new Expediente();
+		
+		Asignatura a1 = new Asignatura("Fundamentos de Programacion", "FP", "0000230", 12.0, Tipo.ANUAL, 1); 
+		Asignatura a2 = new Asignatura("Estructura de Computadores", "EdC", "2050009", 6.0, Tipo.PRIMERO, 1);
+		Nota n1 = new Nota(a1, 2024, Convocatoria.PRIMERA, 8.69);
+		Nota n2 = new Nota(a1, 2024, Convocatoria.PRIMERA, 8.0); 
+		Nota n3 = new Nota(a2, 2024, Convocatoria.PRIMERA, 9.0); 
+		
+		e1.nuevaNota(n1);
+		e1.nuevaNota(n2);
+		e1.nuevaNota(n3);
+		
+		e2.nuevaNota(n1);
+		e2.nuevaNota(n3);
+		e2.nuevaNota(n2);
+		
+		System.out.println(e1.equals(e2));
+		
+		
+	}
+	
 	public static void main(String[] args) {
 		Asignatura a1 = new Asignatura("Fundamentos de Programacion", "FP", "0000230", 12.0, Tipo.ANUAL, 1); 
 		Nota n1 = new Nota(a1, 2024, Convocatoria.PRIMERA, 4.5); 
@@ -30,6 +53,9 @@ public class TestExpediente {
 		System.out.println("---------------------------");
 		System.out.println(e1);
 
+		
+		System.out.println("-------------------------");
+		testEquals();
 
 
 		

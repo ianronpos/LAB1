@@ -1,6 +1,6 @@
 package fp.tipos;
 
-import fp.universidades.utiles.Checkers;
+import fp.utiles.Checkers;
 
 public class Espacio implements Comparable<Espacio>{
 	private String nombre; 

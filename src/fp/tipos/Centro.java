@@ -1,7 +1,9 @@
 package fp.tipos;
 
 import java.util.Set;
-import fp.universidades.utiles.Checkers;
+
+import fp.utiles.Checkers;
+
 import java.lang.reflect.Array;
 import java.util.HashSet;
 

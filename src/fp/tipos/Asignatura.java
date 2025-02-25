@@ -1,7 +1,8 @@
 package fp.tipos;
 
 import java.util.Objects;
-import fp.universidades.utiles.Checkers;
+
+import fp.utiles.Checkers;
 
 
 public record Asignatura(String nombre, String acronimo, String codigo, Double creditos, Tipo tipo, Integer curso) implements Comparable<Asignatura>{

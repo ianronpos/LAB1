@@ -1,6 +1,6 @@
 package fp.tipos;
 
-import fp.universidades.utiles.Checkers;
+import fp.utiles.Checkers;
 
 public record Nota(Asignatura asignatura, Integer cursoAcademico, Convocatoria convocatoria, Double valor) implements Comparable<Nota> {
 	

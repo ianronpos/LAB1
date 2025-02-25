@@ -1,4 +1,4 @@
-package fp.universidades.utiles;
+package fp.utiles;
 
 /**
  * @author reinaqu

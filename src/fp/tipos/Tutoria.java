@@ -1,10 +1,11 @@
 package fp.tipos;
 
 import java.time.LocalTime;
-import fp.universidades.utiles.Checkers;
 import java.time.Duration;
 import java.time.DayOfWeek;
 import java.util.Map;
+
+import fp.utiles.Checkers;
 
 public record Tutoria(DayOfWeek dia, LocalTime horaInicio, LocalTime horaFin, Integer duracion) implements Comparable<Tutoria>{
 

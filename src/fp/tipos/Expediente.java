@@ -3,7 +3,7 @@ package fp.tipos;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Expediente implements Comparable<Expediente>{
+public class Expediente {
 	private List<Nota> notas;
 	
 	public Expediente(){ 
@@ -20,8 +20,16 @@ public class Expediente implements Comparable<Expediente>{
 	}
 	
 	@Override
-	public int compareTo(Expediente e) { 
-		return 0; 
+	public boolean equals(Object obj) { 
+		if(this == obj)
+			return true; 
+		if(obj == null)
+			return false; 
+		if(getClass() != obj.getClass())
+			return false; 
+		Expediente other = (Expediente) obj; 
+		return this.notas.equals(other.notas); 
+
 	}
 	
 	public void nuevaNota(Nota n) { 
