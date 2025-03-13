@@ -54,10 +54,3 @@ public class Despacho extends Espacio{
 	
 	
 }
-/*
-. Finalmente, un despacho tiene la misma representación que los
- * espacios, seguida de los profesores que ocupan el despacho (utilice la
- * representación como cadena de la propiedad profesores). Por ejemplo:
- * "M2.25 (planta 2) [28200400P – Martín Oviedo, María – 21/05/1985 (TITULAR), 33123210J – Vegarredonda Ordiales, Jorge – 25/11/1990 (CONTRATADO_DOCTOR)]"
- * .
- */

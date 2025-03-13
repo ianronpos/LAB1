@@ -16,7 +16,7 @@ public record Nota(Asignatura asignatura, Integer cursoAcademico, Convocatoria c
     public String calificacion() {
         if (valor < 5) return "SUSPENSO";
         if (valor < 7) return "APROBADO";
-        if (valor < 9) return "NOTABLE";
+        if (valor < 9) return "SOBRESALIENTE";
         return mencionHonor(valor) ? "MATRÍCULA DE HONOR" : "SOBRESALIENTE";
     }
 
