@@ -128,7 +128,7 @@ public class Persona implements Comparable<Persona>{
 	
 	private void validarEmail(String email) {
 		Checkers.check("El formato del email no es correcto",
-				email.contains("@") && email.isEmpty());
+				email.contains("@") || email.isEmpty());
 	}
 	
 }
